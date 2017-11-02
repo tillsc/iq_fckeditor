@@ -1,0 +1,64 @@
+FCKConfig.LinkBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Connector=<%= @command_url %>';
+FCKConfig.ImageBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Type=Image&Connector=<%= @command_url %>';
+FCKConfig.FlashBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Type=Flash&Connector=<%= @command_url %>';
+FCKConfig.LinkUploadURL = '<%= @command_url %>';
+FCKConfig.ImageUploadURL = '<%= @command_url %>';
+FCKConfig.FlashUploadURL = '<%= @command_url %>';
+
+// ONLY CHANGE BELOW HERE
+FCKConfig.Plugins.Add( 'flvPlayer', 'de' );
+FCKConfig.Plugins.Add( 'hopcomImageGallery' , 'en' ) ;
+
+FCKConfig.SkinPath = FCKConfig.BasePath + 'skins/silver/';
+
+FCKConfig.ToolbarSets["Simple"] = [
+	['Source','-','-','Templates'],
+	['Cut','Copy','Paste','PasteWord','-','Print','SpellCheck'],
+	['Undo','Redo','-','Find','Replace','-','SelectAll'],
+	'/',
+	['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
+	['OrderedList','UnorderedList','-','Outdent','Indent'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
+	['Link','Unlink'],
+	'/',
+	['Image','Flash','flvPlayer','Table','Rule','Smiley'],
+	['FontName','FontSize'],
+	['TextColor','BGColor'],
+	['-','About']
+] ;
+FCKConfig.ToolbarSets["Hopcom"] = [
+	['Source','-','Save','NewPage','-','Templates'],
+	['Cut','Copy','Paste','PasteText','PasteWord','-','Print','SpellCheck'],
+	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat','FitWindow','ShowBlocks'],
+	'/',
+	['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
+	['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
+	['Link','Unlink','Anchor'],
+	['Image','Flash','flvPlayer','Table','Rule','Smiley','SpecialChar'],
+	['-','FontName','FontSize'],
+	['TextColor','BGColor']		// No comma for the last row.
+] ;
+
+FCKConfig.ToolbarSets["Mcontent"] = [
+	['Source','Save','Cut','Copy','Paste','Undo','Redo'],
+	['Bold','Italic','Underline','-','Subscript','Superscript'],
+	['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote','SpecialChar','Smiley'],
+    '/',
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull','-','Link','Unlink','Anchor','-','Image','Flash','flvPlayer','Table','-','FontName','FontSize','TextColor','BGColor']			// No comma for the last row.
+] ;
+
+FCKConfig.ToolbarSets["Sidebar"] = [
+	['Save','Bold','Italic','Underline','SpecialChar'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull','OrderedList','UnorderedList'],
+	['Link','Unlink','Anchor','TextColor','BGColor'],
+	['Image','Flash','flvPlayer','FontSize'],
+	['FontName']
+    // No comma for the last row.
+] ;
+
+FCKConfig.ToolbarSets["DraftBlogPost"] = [
+	['Source','OrderedList','UnorderedList','-','Link','Unlink','-','Image','Flash','flvPlayer','hopcomImageGallery','-','Smiley','-','Cut','Copy','Paste','PasteText','PasteWord'],
+	['Bold','Italic','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyFull','TextColor']
+] ;
+

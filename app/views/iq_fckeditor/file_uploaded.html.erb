@@ -1,0 +1,8 @@
+<% javascript_tag do %>
+  if (window.parent.frames['frmUpload']) {
+    window.parent.frames['frmUpload'].OnUploadCompleted(<%= @error_number %>, '<%=  @file_name %>');
+  }
+  else {
+    window.parent.OnUploadCompleted(<%= @error_number %>, '<%=  @file_url %>', '<%=  @file_name %>');
+  }
+<% end %>

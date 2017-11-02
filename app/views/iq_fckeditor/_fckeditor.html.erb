@@ -1,0 +1,7 @@
+<textarea id='<%= id %>' name='<%= "#{object_name}[#{method_name}]"%>'><%= h value %></textarea>
+<% javascript_tag do %>
+  var <%= v %> = new FCKeditor('<%= id %>', <%= width %>, <%= height %>, <%= toolbarset %>, '<%= escape_javascript(value) %>', <%= base_path %>);
+  <%= v %>.BasePath = "<%= ActionController::Base::relative_url_root %>/javascripts/fckeditor/";
+  <%= v %>.Config["CustomConfigurationsPath"] = '<%= custom_config_url %>';
+  <%= v %>.ReplaceTextarea();
+<% end %>
