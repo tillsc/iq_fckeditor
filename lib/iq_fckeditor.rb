@@ -4,14 +4,7 @@ require 'iq_fckeditor/engine'
 # -*- encoding : utf-8 -*-
 module IqFckeditor
 
-  def self.default_uploads_base_path
-    @@default_uploads_base_path
-  end
-
-  def self.default_uploads_base_path=(val)
-    @@default_uploads_base_path = val
-  end
-  self.default_uploads_base_path = Rails.root.join("/data/:resource_path")
+  cattr_accessor :default_uploads_base_path
 
   # Include as InstanceMethods into the acts_as_fckeditor_file_provider
   module Controller
