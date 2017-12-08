@@ -1,4 +1,4 @@
-<% javascript_tag do %>
+<%= javascript_tag do %>
   if (window.parent.frames['frmUpload']) {
     window.parent.frames['frmUpload'].OnUploadCompleted(<%= @error_number %>, '<%=  @file_name %>');
   }
