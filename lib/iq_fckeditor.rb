@@ -10,6 +10,9 @@ module IqFckeditor
   module Controller
     #accepted MIME types for upload
     MIME_TYPES = [
+      "text/comma-separated-values",
+      "text/csv",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       "image/jpeg",
       "image/pjpeg",
       "image/gif",
