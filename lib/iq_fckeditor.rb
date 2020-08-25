@@ -12,6 +12,7 @@ module IqFckeditor
     MIME_TYPES = [
       "text/comma-separated-values",
       "text/csv",
+      "application/vnd.ms-excel",
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       "image/jpeg",
       "image/pjpeg",
