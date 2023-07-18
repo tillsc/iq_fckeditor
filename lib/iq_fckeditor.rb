@@ -8,6 +8,9 @@ module IqFckeditor
 
   # Include as InstanceMethods into the acts_as_fckeditor_file_provider
   module Controller
+
+    extend ActiveSupport::Concern
+
     #accepted MIME types for upload
     MIME_TYPES = [
       "text/comma-separated-values",
@@ -23,6 +26,23 @@ module IqFckeditor
       "application/x-shockwave-flash",
       "application/octet-stream" #TODO: Muss weg!
     ]
+
+    included do
+      # Some Configurtion Parameters
+      cattr_accessor :fckeditor_file_action_url
+
+      cattr_accessor :fckeditor_command_action_url
+
+
+      cattr_accessor :fckeditor_uploads_base_path
+      # This will default to IqFckeditor.default_uploads_base_path
+
+      cattr_accessor :fckeditor_uploads_base_url
+      self.fckeditor_uploads_base_url = ":fckeditor_file_action_url?file="
+
+      #TODO: geht das besser?
+      self.protect_from_forgery :except => [:fckeditor_command]
+    end
 
     # Generates a config providing urls for the plugin. This is the hook to
     # provide different fck configs for different resources
@@ -120,24 +140,6 @@ module IqFckeditor
       path.pop
       path << action.to_s if action
       path.join('/')
-    end
-
-    def self.included(klass)
-      class << klass
-        # Some Configurtion Parameters
-        cattr_accessor :fckeditor_file_action_url
-
-        cattr_accessor :fckeditor_command_action_url
-
-
-        cattr_accessor :fckeditor_uploads_base_path
-        # This will default to IqFckeditor.default_uploads_base_path
-
-        cattr_accessor :fckeditor_uploads_base_url
-        self.fckeditor_uploads_base_url = ":fckeditor_file_action_url?file="
-      end
-      #TODO: geht das besser?
-      klass.protect_from_forgery :except => [:fckeditor_command]
     end
 
     # This method returns the real base directory of this request and the path
