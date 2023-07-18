@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "bundler"
   s.add_dependency "actionpack"
 
-  s.files = %w(LICENSE README.md Rakefile iq_fckeditor.gemspec) + Dir.glob("{app,lib,tasks,test}/**/*")
+  s.files = %w(LICENSE README.md Rakefile iq_fckeditor.gemspec) + Dir.glob("{app,config,lib,tasks,test}/**/*")
   s.test_files = Dir.glob("{test}/**/*")
   s.executables = Dir.glob("{bin}/**/*")
   s.require_paths = ["lib"]
